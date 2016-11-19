@@ -1,0 +1,28 @@
+{
+  "name": "savingsApi",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node .",
+    "pretest": "jshint .",
+    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ../app/src/app/shared/sdk -i enabled -w enabled"
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "loopback": "^2.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^2.1.0",
+    "loopback-datasource-juggler": "^2.39.0",
+    "serve-favicon": "^2.0.1"
+  },
+  "devDependencies": {
+    "@mean-expert/loopback-sdk-builder": "^2.0.10",
+    "jshint": "^2.5.6"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "description": "savingsApi"
+}

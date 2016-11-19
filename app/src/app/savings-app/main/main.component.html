@@ -1,0 +1,50 @@
+<section class="segment">
+    <div *ngIf="targets" class="stackable cards">
+      <article class="card segment" *ngFor="let item of targets; let i = index; trackBy: trackByFn">
+          <div class="content">
+              <picture class="image">
+                <img src="{{item.image}}">
+              </picture>
+
+              <header class="left floated header">
+                  <h3>{{item.title}}</h3>
+              </header>
+
+              <div class="right floated meta">
+                <ul class="horizontal list">
+                    <li class="item">
+                        <b>Saved</b>
+                        <div>${{item.savedAmt}}</div>
+                    </li>
+                    <li class="item">
+                        <div>Goal</div>
+                        <div>${{item.totalValue}}</div>
+                    </li>
+                </ul>
+              </div>
+
+              <div class="description">
+                  <p>{{item.description}}</p>
+              </div>
+          </div>
+          <div class="extra content">
+            <progress value="0" max="100"></progress>
+          </div>
+          <div class="extra content">
+              <div class="two centered buttons">
+                  <button class="">Adjust</button>
+                  <button [routerLink]="['/add', item.id]">Add $</button>
+              </div>
+          </div>
+      </article>
+    </div>
+
+
+    <div class="center aligned container" *ngIf="!targets">
+        <button 
+            class="large" 
+            [routerLink]="['/app/new']">
+            ADD A SAVINGS TARGET!
+        </button>
+    </div>
+</section>

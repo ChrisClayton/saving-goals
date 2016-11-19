@@ -1,0 +1,22 @@
+<section class="basic segment container">
+  <header>
+    <header>
+        <h2 [routerLink]="['/app']">{{title}}</h2>
+    </header>
+
+    <div class="buttons">
+        <button 
+          (click)="logout()" 
+          [class.disabled]="!isAuthenticated">
+          Logout
+        </button>
+        <button 
+          [routerLink]="['/app/new']" 
+          [routerLinkActive]="['active']">
+          Add Goal
+        </button>
+    </div>
+  </header>
+
+  <router-outlet></router-outlet>
+</section>

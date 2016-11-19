@@ -1,0 +1,303 @@
+/*******************************
+            Segment
+*******************************/
+
+.segment {
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+  margin: 1rem 0em;
+  padding: 1em 1em;
+  border-radius: 0.28571429rem;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+}
+.segment:first-child {
+  margin-top: 0em;
+}
+.segment:last-child {
+  margin-bottom: 0em;
+}
+
+/* Vertical */
+.segment.vertical {
+  margin: 0em;
+  padding-left: 0em;
+  padding-right: 0em;
+  background: none transparent;
+  border-radius: 0px;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+}
+.segment.vertical:last-child {
+  border-bottom: none;
+}
+
+
+/*******************************
+             Types
+*******************************/
+
+/*-------------------
+       Groups
+--------------------*/
+
+/* Group */
+.segments {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  margin: 1rem 0em;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+  border-radius: 0.28571429rem;
+}
+.segments:first-child {
+  margin-top: 0em;
+}
+.segments:last-child {
+  margin-bottom: 0em;
+}
+
+/* Nested Segment */
+.segments > .segment {
+  top: 0px;
+  bottom: 0px;
+  border-radius: 0px;
+  margin: 0em;
+  width: auto;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
+}
+.segments:not(.horizontal) > .segment:first-child {
+  border-top: none;
+  margin-top: 0em;
+  bottom: 0px;
+  margin-bottom: 0em;
+  top: 0px;
+  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+}
+
+/* Bottom */
+.segments:not(.horizontal) > .segment:last-child {
+  top: 0px;
+  bottom: 0px;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), none;
+  border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+}
+
+/* Only */
+.segments:not(.horizontal) > .segment:only-child {
+  border-radius: 0.28571429rem;
+}
+
+/* Nested Group */
+.segments > .segments {
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
+  margin: 1rem 1rem;
+}
+.segments > .segments:first-child {
+  border-top: none;
+}
+.segments > .segment + .segments:not(.horizontal) {
+  margin-top: 0em;
+}
+
+/* Horizontal Group */
+.horizontal.segments {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: transparent;
+  border-radius: 0px;
+  padding: 0em;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+  margin: 1rem 0em;
+  border-radius: 0.28571429rem;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+/* Nested Horizontal Group */
+.segments > .horizontal.segments {
+  margin: 0em;
+  background-color: transparent;
+  border-radius: 0px;
+  border: none;
+  box-shadow: none;
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+/* Horizontal Segment */
+.horizontal.segments > .segment {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -ms-flex: 1 1 0px;
+  
+/* Solves #2550 MS Flex */
+  margin: 0em;
+  min-width: 0px;
+  background-color: transparent;
+  border-radius: 0px;
+  border: none;
+  box-shadow: none;
+  border-left: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+/* Border Fixes */
+.segments > .horizontal.segments:first-child {
+  border-top: none;
+}
+.horizontal.segments > .segment:first-child {
+  border-left: none;
+}
+
+
+/*******************************
+            States
+*******************************/
+
+
+/*--------------
+    Disabled
+---------------*/
+
+.segment.disabled {
+  opacity: 0.45;
+  color: rgba(40, 40, 40, 0.3);
+}
+
+/*--------------
+    Loading
+---------------*/
+
+.segment.loading {
+  position: relative;
+  cursor: default;
+  pointer-events: none;
+  text-shadow: none !important;
+  color: transparent !important;
+  -webkit-transition: all 0s linear;
+  transition: all 0s linear;
+}
+.segment.loading:before {
+  position: absolute;
+  content: '';
+  top: 0%;
+  left: 0%;
+  background: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100%;
+  border-radius: 0.28571429rem;
+  z-index: 100;
+}
+.segment.loading:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  margin: -1.5em 0em 0em -1.5em;
+  width: 3em;
+  height: 3em;
+  -webkit-animation: segment-spin 0.6s linear;
+          animation: segment-spin 0.6s linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  border-radius: 500rem;
+  border-color: #767676 rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+  border-style: solid;
+  border-width: 0.2em;
+  box-shadow: 0px 0px 0px 1px transparent;
+  visibility: visible;
+  z-index: 101;
+}
+@-webkit-keyframes segment-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes segment-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+
+/*-------------------
+       Basic
+--------------------*/
+
+.segment.basic {
+  background: none transparent;
+  box-shadow: none;
+  border: none;
+  border-radius: 0px;
+}
+
+/*-------------------
+       Clearing
+--------------------*/
+
+.segment.clearing:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/*-------------------
+       Aligned
+--------------------*/
+
+.segment[class*="left aligned"] {
+  text-align: left;
+}
+.segment[class*="right aligned"] {
+  text-align: right;
+}
+.segment[class*="center aligned"] {
+  text-align: center;
+}
+
+/*-------------------
+       Floated
+--------------------*/
+
+.segment.floated,
+.segment[class*="left floated"] {
+  float: left;
+  margin-right: 1em;
+}
+.segment[class*="right floated"] {
+  float: right;
+  margin-left: 1em;
+}

@@ -1,0 +1,36 @@
+<section class="basic segment container">
+
+  <form id="signup-form" (submit)="signup($event)">
+    <header>
+        <h3 class="dividing">Register</h3>
+        <p class="description">Fill in the form below to create an account.</p>
+    </header>
+    <div class="field">
+        <label for="signup-email">Email: (required)</label>
+        <input id="signup-email" 
+          name="email" 
+          [(ngModel)]="account.email" 
+          placeholder="Email address"
+          type="email" 
+          tabindex="1" 
+          required>
+    </div>
+    <div class="field">
+        <label for="signup-password">Password: (required)</label>
+        <input id="signup-password" 
+          name="password"
+          [(ngModel)]="account.password" 
+          placeholder="Password" 
+          type="password" 
+          tabindex="2" 
+          required>
+    </div>
+    <footer>
+        <button id="signup-submit"
+          name="submit"
+          [class.disabled]="!(account.email && account.password)"
+          type="submit">Signup</button>
+    </footer>
+  </form>
+
+</section>

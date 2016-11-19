@@ -1,0 +1,25 @@
+<section class="basic segment container">
+
+    <form id="login-form" (submit)="signin($event)">
+      <header>
+          <h3 class="dividing">Login</h3>
+          <p class="description">Fill in the form below to login.</p>
+      </header>
+      <div class="field">
+          <label for="login-email">Email: (required)</label>
+          <input id="login-email" [(ngModel)]="account.email" name="email" placeholder="Please enter your email address" type="email" tabindex="1" required>
+      </div>
+      <div class="field">
+          <label for="login-password">Password: (required)</label>
+          <input id="login-password" [(ngModel)]="account.password" name="password" placeholder="Please enter your password" type="password" tabindex="2" required>
+      </div>
+      <footer>
+          <button 
+            id="login-submit" 
+            [class.disabled]="!(account.email && account.password)"
+            name="submit" 
+            type="submit">Login</button>
+      </footer>
+    </form>
+
+</section>

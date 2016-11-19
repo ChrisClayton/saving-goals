@@ -1,0 +1,14 @@
+{
+  "name": "savings-targets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start:client && npm run start:server",
+    "start:client": "cd app ng serve",
+    "start:server": "cd api node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "account",
+  "plural": "accounts",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "targets": {
+      "type": "hasMany",
+      "model": "target",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

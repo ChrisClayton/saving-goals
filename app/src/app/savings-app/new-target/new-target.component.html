@@ -1,0 +1,56 @@
+<section>
+    
+    <form id="target-new-form" (submit)="addTarget($event)">
+      <header>
+          <h3 class="dividing">New Goal</h3>
+          <p class="description">Fill in the form below to add a goal.</p>
+      </header>
+      <div class="field">
+          <label for="target-new-title">Title: (required)</label>
+          <input id="target-new-title" 
+            name="title" 
+            [(ngModel)]="target.title" 
+            placeholder="Title"
+            type="text" 
+            tabindex="1" 
+            required>
+      </div>
+      <div class="field">
+          <label for="target-new-amount">Goal Amount</label>
+          <input id="target-new-amount" 
+            name="totalValue"
+            [(ngModel)]="target.totalValue" 
+            placeholder="500" 
+            type="number" 
+            tabindex="2" 
+            required>
+      </div>
+      <div class="field">
+          <label for="target-new-date">Goal Date</label>
+          <input id="target-new-date" 
+            name="endDate"
+            [(ngModel)]="target.endDate" 
+            placeholder="" 
+            type="date" 
+            tabindex="2" 
+            required>
+      </div>
+      <div class="field">
+          <label for="target-new-description">Description</label>
+          <input id="target-new-description" 
+            name="password"
+            [(ngModel)]="target.description" 
+            placeholder="500" 
+            type="text" 
+            tabindex="2" 
+            required>
+      </div>
+      <footer>
+          <button id="target-new-submit"
+            name="submit"
+            [class.disabled]="!(target.title)"
+            type="submit">Submit</button>
+      </footer>
+    </form>
+
+</section>

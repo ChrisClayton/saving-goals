@@ -1,0 +1,33 @@
+{
+  "name": "target",
+  "plural": "targets",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "totalValue": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "account": {
+      "type": "belongsTo",
+      "model": "account"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/html5-reset/assets/css/reset.css';
+
+@import './assets/styles/site.css';
+@import './assets/styles/container.css';
+@import './assets/styles/segment.css';
+
+@import './assets/styles/button.css';
+@import './assets/styles/header.css';
+@import './assets/styles/form.css';
+@import './assets/styles/list.css';
+
+@import './assets/styles/menu.css';
+
+@import './assets/styles/cards.css';
+
+[hidden] {
+    visibility: hidden !important;
+}
+
+.dividing {
+  padding-bottom: 0.21428571rem;
+  border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+progress {
+    display: inline-block;
+    width: 100%;
+    vertical-align: -0.2em;
+}

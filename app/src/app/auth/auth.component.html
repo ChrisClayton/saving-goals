@@ -1,0 +1,16 @@
+<section class="segment">
+    <nav class="tabular menu">
+      <a class="item"
+        [routerLink]="['/auth/login']" 
+        [routerLinkActive]="['active']">
+        Login
+      </a>
+      <a class="item"
+        [routerLink]="['/auth/register']" 
+        [routerLinkActive]="['active']">
+        Register
+      </a>
+    </nav>
+
+    <router-outlet></router-outlet>
+</section>

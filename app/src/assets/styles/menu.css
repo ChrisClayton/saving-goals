@@ -1,0 +1,447 @@
+/*******************************
+            Standard
+*******************************/
+
+
+/*--------------
+      Menu
+---------------*/
+
+.menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0em;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  background: #FFFFFF;
+  font-weight: normal;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+  border-radius: 0.28571429rem;
+  min-height: 2.85714286em;
+}
+.menu:after {
+  content: '';
+  display: block;
+  height: 0px;
+  clear: both;
+  visibility: hidden;
+}
+.menu:first-child {
+  margin-top: 0rem;
+}
+.menu:last-child {
+  margin-bottom: 0rem;
+}
+
+/*--------------
+    Sub-Menu
+---------------*/
+
+.menu .menu {
+  margin: 0em;
+}
+.menu:not(.vertical) > .menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*--------------
+      Item
+---------------*/
+
+.menu:not(.vertical) .item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.menu .item {
+  position: relative;
+  vertical-align: middle;
+  line-height: 1;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: none;
+  padding: 0.92857143em 1.14285714em;
+  text-transform: none;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: normal;
+  -webkit-transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
+  transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
+}
+.menu > .item:first-child {
+  border-radius: 0.28571429rem 0px 0px 0.28571429rem;
+}
+
+/* Border */
+.menu .item:before {
+  position: absolute;
+  content: '';
+  top: 0%;
+  right: 0px;
+  height: 100%;
+  width: 1px;
+  background: rgba(34, 36, 38, 0.1);
+}
+
+/*--------------
+  Text Content
+---------------*/
+
+.menu .text.item > *,
+.menu .item > a:not(),
+.menu .item > p:only-child {
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  line-height: 1.3;
+}
+.menu .item > p:first-child {
+  margin-top: 0;
+}
+.menu .item > p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------
+      Icons
+---------------*/
+
+.menu .item > i.icon {
+  opacity: 0.9;
+  float: none;
+  margin: 0em 0.35714286em 0em 0em;
+}
+
+/*--------------
+     Button
+---------------*/
+
+.menu:not(.vertical) .item > .button {
+  position: relative;
+  top: 0em;
+  margin: -0.5em 0em;
+  padding-bottom: 0.78571429em;
+  padding-top: 0.78571429em;
+  font-size: 1em;
+}
+
+/*----------------
+ Container
+-----------------*/
+
+.menu > .container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: inherit;
+  -webkit-align-items: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: inherit;
+      -ms-flex-direction: inherit;
+          flex-direction: inherit;
+}
+
+/*--------------
+     Inputs
+---------------*/
+
+.menu .item > .input {
+  width: 100%;
+}
+.menu:not(.vertical) .item > .input {
+  position: relative;
+  top: 0em;
+  margin: -0.5em 0em;
+}
+.menu .item > .input input {
+  font-size: 1em;
+  padding-top: 0.57142857em;
+  padding-bottom: 0.57142857em;
+}
+
+/*--------------
+     Header
+---------------*/
+
+.menu .header.item,
+.vertical.menu .header.item {
+  margin: 0em;
+  background: '';
+  text-transform: normal;
+  font-weight: bold;
+}
+.vertical.menu .item > .header {
+  margin: 0em 0em 0.5em;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/*--------------
+     Labels
+---------------*/
+
+.menu .item > .label {
+  background: #999999;
+  color: #FFFFFF;
+  margin-left: 1em;
+  padding: 0.3em 0.78571429em;
+}
+.vertical.menu .item > .label {
+  background: #999999;
+  color: #FFFFFF;
+  margin-top: -0.15em;
+  margin-bottom: -0.15em;
+  padding: 0.3em 0.78571429em;
+}
+.menu .item > .floating.label {
+  padding: 0.3em 0.78571429em;
+}
+
+/*--------------
+     Images
+---------------*/
+
+.menu .item > img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -0.3em 0em;
+  width: 2.5em;
+}
+.vertical.menu .item > img:only-child {
+  display: block;
+  max-width: 100%;
+  width: auto;
+}
+
+
+/*******************************
+          Coupling
+*******************************/
+
+/*--------------
+    Container
+---------------*/
+
+@media only screen and (max-width: 767px) {
+  .menu > .container {
+    width: 100% !important;
+    margin-left: 0em !important;
+    margin-right: 0em !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .menu:not(.secondary):not(.text):not(.tabular):not(.borderless) > .container > .item:not(.right):not(.borderless):first-child {
+    border-left: 1px solid rgba(34, 36, 38, 0.1);
+  }
+}
+
+
+/*******************************
+             States
+*******************************/
+
+
+/*--------------
+      Hover
+---------------*/
+
+.menu.link .item:hover,
+.menu .dropdown.item:hover,
+.menu .link.item:hover,
+.menu a.item:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.03);
+  color: rgba(0, 0, 0, 0.95);
+}
+
+/*--------------
+     Pressed
+---------------*/
+
+.menu.link .item:active,
+.menu .link.item:active,
+.menu a.item:active {
+  background: rgba(0, 0, 0, 0.03);
+  color: rgba(0, 0, 0, 0.95);
+}
+
+/*--------------
+     Active
+---------------*/
+
+.menu .active.item {
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.95);
+  font-weight: normal;
+  box-shadow: none;
+}
+.menu .active.item > i.icon {
+  opacity: 1;
+}
+
+/*--------------
+  Active Hover
+---------------*/
+
+.menu .active.item:hover,
+.vertical.menu .active.item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.95);
+}
+
+/*--------------
+     Disabled
+---------------*/
+
+.menu .item.disabled,
+.menu .item.disabled:hover {
+  cursor: default;
+  background-color: transparent !important;
+  color: rgba(40, 40, 40, 0.3);
+}
+
+
+/*******************************
+             Types
+*******************************/
+
+
+/*------------------
+Floated Menu / Item
+-------------------*/
+
+
+/* Left Floated */
+.menu:not(.vertical) .left.item,
+.menu:not(.vertical) .left.menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: auto !important;
+}
+
+/* Right Floated */
+.menu:not(.vertical) .right.item,
+.menu:not(.vertical) .right.menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto !important;
+}
+
+/* Swapped Borders */
+.menu .right.item::before,
+.menu .right.menu > .item::before {
+  right: auto;
+  left: 0;
+}
+
+/*--------------
+     Tabular
+---------------*/
+
+.menu.tabular {
+  border-radius: 0em;
+  box-shadow: none !important;
+  border: none;
+  background: none transparent;
+  border-bottom: 1px solid #D4D4D5;
+}
+.menu.tabular.fluid {
+  width: calc(100% +  2px ) !important;
+}
+.menu.tabular .item {
+  background: transparent;
+  border-bottom: none;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-top: 2px solid transparent;
+  padding: 0.92857143em 1.42857143em;
+  color: rgba(0, 0, 0, 0.87);
+}
+.menu.tabular .item:before {
+  display: none;
+}
+
+/* Hover */
+.menu.tabular .item:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Active */
+.menu.tabular .active.item {
+  background: none #FFFFFF;
+  color: rgba(0, 0, 0, 0.95);
+  border-top-width: 1px;
+  border-color: #D4D4D5;
+  font-weight: bold;
+  margin-bottom: -1px;
+  box-shadow: none;
+  border-radius: 0.28571429rem 0.28571429rem 0px 0px !important;
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+
+/*--------------
+    Stackable
+---------------*/
+
+@media only screen and (max-width: 767px) {
+  .ui.stackable.menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .ui.stackable.menu .item {
+    width: 100% !important;
+  }
+  .ui.stackable.menu .item:before {
+    position: absolute;
+    content: '';
+    top: auto;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    background: rgba(34, 36, 38, 0.1);
+  }
+  .ui.stackable.menu .left.menu,
+  .ui.stackable.menu .left.item {
+    margin-right: 0 !important;
+  }
+  .ui.stackable.menu .right.menu,
+  .ui.stackable.menu .right.item {
+    margin-left: 0 !important;
+  }
+}
